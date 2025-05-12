@@ -11,9 +11,8 @@ interface SkipItemProps {
 }
 
 const SkipItem: React.FC<SkipItemProps> = ({ skip, onSelect, isSelected, isSuitable }) => {
-    // Destructure properties from the updated Skip interface
+    // Destructure properties from the updated Skip interface - Removed 'id'
     const {
-        id,
         size,
         hire_period_days,
         price_before_vat,
@@ -21,7 +20,7 @@ const SkipItem: React.FC<SkipItemProps> = ({ skip, onSelect, isSelected, isSuita
         allowed_on_road,
         allows_heavy_waste,
         forbidden // We might want to visually indicate forbidden skips too
-    } = skip;
+    } = skip; // 'id' is no longer destructured here
 
     // Calculate price including VAT
     const totalPrice = price_before_vat + (price_before_vat * (vat / 100));
